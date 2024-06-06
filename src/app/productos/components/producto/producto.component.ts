@@ -80,6 +80,13 @@ export class ProductoComponent implements OnInit {
       }
     );
 
+    this.frmProducto.get('date_release')?.valueChanges.subscribe(value => {
+      if (value) {
+        const selectedDate = new Date(value);
+        const newDate = new Date(selectedDate.setFullYear(selectedDate.getFullYear() + 1));
+        this.frmProducto.get("date_revision")?.setValue(newDate.toISOString().split('T')[0]);
+      }
+    });
   }
 
   reiniciarFormulario(){
@@ -135,5 +142,17 @@ export class ProductoComponent implements OnInit {
         Swal.fire(`Error: ${error}`,"", "error");
       }
     );
+  }
+
+  eliminarProducto(producto:Producto){
+      this._productoService.eliminarProducto(producto.id).subscribe(
+        (respuesta)=>{
+            Swal.fire("Producto Eliminado!","","success");
+            this.listarProductos();
+        },
+        (error)=>{
+          Swal.fire(`Error: ${error}`,"", "error");
+        }
+      );
   }
 }

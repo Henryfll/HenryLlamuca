@@ -5,7 +5,7 @@
 
   <div class="input-container" *ngIf="esNuevo==false && esEdicion==false">
     <input type="text" class="search-input" placeholder="Buscar...">
-    <button class="search-button" (click)="nuevoProducto()">Agregar</button>
+    <button class="button" (click)="nuevoProducto()">Agregar</button>
   </div>
 
 
@@ -18,6 +18,7 @@
             <th>Descripción</th>
             <th>Fecha de liberación</th>
             <th>Fecha de reestructuración</th>
+            <th>Opciones</th>
           </tr>
         </thead>
         <tbody>
@@ -28,6 +29,10 @@
             <td data-label="Descripción">{{ producto.description }}</td>
             <td data-label="Liberación">{{ producto.date_release }}</td>
             <td data-label="Reestructuración">{{ producto.date_revision }}</td>
+            <td data-label="Opciones">
+              <button class="button" (click)="editarProducto(producto)">Editar</button>
+              <button class="button-delete" (click)="eliminarProducto(producto)">Eliminar</button>
+            </td>
 
           </tr>
         </tbody>
@@ -92,8 +97,8 @@
 
       </div>
       <br>
-      <button (click)="reiniciarFormulario()" >Reiniciar</button>
-      <button  [disabled]="frmProducto.invalid" (click)="guardarProducto()">Enviar</button>
+      <button class="button" (click)="reiniciarFormulario()" >Reiniciar</button>
+      <button class="button" [disabled]="frmProducto.invalid" (click)="guardarProducto()">Enviar</button>
     </form>
   </div>
 </div>

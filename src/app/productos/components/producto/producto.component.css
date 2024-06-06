@@ -1,4 +1,3 @@
-/* Reseteo básico de márgenes y paddings */
 * {
   margin: 0;
   padding: 0;
@@ -34,41 +33,54 @@ body {
 
 }
 .input-container {
-  display: flex; /* Usamos flexbox para alinear elementos */
+  display: flex;
   width: 100%;
-  max-width: 600px; /* Ancho máximo del contenedor */
+  max-width: 600px;
   padding-left: 30px;
   padding-bottom: 10px;
 }
 .search-input {
-  width: 100%; /* Ocupa todo el ancho disponible */
-  max-width: 300px; /* Ancho máximo del input */
+  width: 100%;
+  max-width: 300px;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  display: block; /* Asegura que el input sea un bloque */
+  display: block;
 }
-.search-button {
+.button {
   padding: 10px 20px;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px 4px 4px 4px; /* Bordes redondeados solo a la derecha */
-  border: none; /* Eliminar el borde izquierdo */
+  border-radius: 4px 4px 4px 4px;
+  border: none;
   background-color: #eaff00;
   color: #0a1e74;
   cursor: pointer;
   margin-left: 10px;
 }
-
-.search-button:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el cursor */
+.button-delete {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px 4px 4px 4px;
+  border: none;
+  background-color: #f6f6f8;
+  color: #0a1e74;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.button-delete:hover {
+  background-color: #b93950;
+}
+.button:hover {
+  background-color: #0056b3;
 }
 
 .table-container {
   width: 100%;
   max-width: 800px;
-  overflow-x: auto; /* Permite el scroll horizontal en pantallas pequeñas */
+  overflow-x: auto;
   background-color: #fff;
   padding: 10px;
   border-radius: 8px;
@@ -79,7 +91,7 @@ body {
 .responsive-table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 600px; /* Asegura un mínimo ancho para la tabla */
+  min-width: 600px;
 }
 
 .responsive-table th,
@@ -94,11 +106,10 @@ body {
 }
 
 .responsive-table th {
-  background-color: #a3a4a6;
+  background-color: #000000;
   color: #fff;
 }
 
-/* Alternar color de filas */
 .responsive-table tbody tr:nth-of-type(even) {
   background-color: #f9f9f9;
 }
@@ -157,16 +168,7 @@ input {
   margin-top: 8px;
 }
 
-button {
-  background-color: #eaff00;
-  color: rgb(17, 44, 152);
-  border: none;
-  padding: 12px;
-  border-radius: 4px;
-  font-size: 1em;
-  cursor: pointer;
-  align-self: center;
-}
+
 
 button[disabled] {
   background-color: #ccc;
@@ -175,14 +177,13 @@ button[disabled] {
 
 
 .rounded-image {
-  width: 30px; /* Puedes ajustar el tamaño según sea necesario */
-  height: 30px; /* Asegúrate de que el ancho y alto sean iguales para hacerla circular */
-  border-radius: 50%; /* Hace la imagen circular */
-  object-fit: cover; /* Ajusta la imagen para que cubra el contenedor sin distorsión */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Opcional: Añade una sombra */
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsivo para dispositivos más pequeños */
 @media (max-width: 600px) {
   .title {
     font-size: 1.5rem;
@@ -198,12 +199,12 @@ button[disabled] {
   }
 
   .responsive-table, .responsive-table tbody, .responsive-table tr, .responsive-table td {
-    display: block; /* Hacer que cada fila sea un bloque */
+    display: block;
     width: 100%;
   }
 
   .responsive-table tr {
-    margin-bottom: 15px; /* Espacio entre filas */
+    margin-bottom: 15px;
   }
 
   .responsive-table td {
@@ -213,7 +214,7 @@ button[disabled] {
   }
 
   .responsive-table td::before {
-    content: attr(data-label); /* Añadir los datos de etiqueta */
+    content: attr(data-label);
     position: absolute;
     left: 0;
     width: 50%;
